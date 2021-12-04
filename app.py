@@ -10,11 +10,11 @@ app = Flask(__name__)
 def hello_world():  # put application's code here
     return 'Hello World!'
 
-@app.route('dashboard')
+@app.route('/dashboard')
 def dashboard():
     return 'dashboard'
 
-@app.route('datalog')
+@app.route('/datalog')
 def datalog():
     return 'datalog'
 
