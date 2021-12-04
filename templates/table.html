@@ -6,9 +6,20 @@
 </head>
 <body>
 <table>
-    {% for dict_item in dict %}
-    <p>{{dict_item}}</p>
+    {% for key in dict[0] %}
+    <th>{{key}}</th>
     {% endfor %}
+    {% for i in dict %}
+    <tr>
+        {% for key in i %}
+        <td>{{i[key]}}</td>
+
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
 </table>
+
+
 </body>
 </html>

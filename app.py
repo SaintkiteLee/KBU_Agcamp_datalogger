@@ -2,6 +2,7 @@ from flask import Flask, render_template
 import sqlite3, numpy
 import pandas as pd
 import json
+from pprint import pprint
 
 app = Flask(__name__)
 
@@ -23,7 +24,9 @@ def datalog():
     cont = pd.read_sql_query("SELECT * FROM test_env_log", conn)
     dict = cont.to_dict('records')
     param = json.dumps(dict)
-    print(param)
+    print(dict[0])
+
+
 
     return render_template('table.html', dict=dict)
 
