@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, make_response
+from flask import Flask, render_template, request, jsonify, make_response, Response, redirect
 import sqlite3, numpy
 import pandas as pd
 import json
@@ -15,7 +15,7 @@ conn = sqlite3.connect('database.sqlite3', check_same_thread=False)
 
 @app.route('/')
 def index():  # put application's code here
-    return render_template("index.html")\
+    return redirect('/datalog')
 
 
 @app.route('/base')
@@ -65,11 +65,11 @@ def in_topic():
 
         df = pd.DataFrame.from_records([param2])
         df_r = df.set_index('date')
-
+        print(df_r)
         df_r.to_sql('internal_env_log', conn, if_exists='append')
 
 
-    return "200"
+    return Response('200')
 
 
 if __name__ == '__main__':
