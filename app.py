@@ -10,9 +10,16 @@ app = Flask(__name__)
 conn = sqlite3.connect('database.sqlite3', check_same_thread=False)
 
 
+
+
 @app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
+def index():  # put application's code here
+    return render_template("index.html")\
+
+
+@app.route('/base')
+def base():  # put application's code here
+    return render_template("base.html")
 
 @app.route('/dashboard')
 def dashboard():
@@ -28,7 +35,7 @@ def datalog():
 
 
 
-    return render_template('table.html', dict=dict)
+    return render_template('tables.html', dict=dict)
 
 
 
