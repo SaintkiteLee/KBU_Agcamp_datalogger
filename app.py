@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import sqlite3, numpy
 import pandas as pd
 import json
@@ -21,9 +21,11 @@ def dashboard():
 def datalog():
     c = conn.cursor()
     cont = pd.read_sql_query("SELECT * FROM test_env_log", conn)
-    print(cont)
+    dict = cont.to_dict('records')
+    param = json.dumps(dict)
+    print(param)
 
-    return "test"
+    return render_template('table.html', dict=dict)
 
 
 
