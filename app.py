@@ -29,7 +29,7 @@ def dashboard():
 @app.route('/datalog')
 def datalog():
     c = conn.cursor()
-    cont = pd.read_sql_query("SELECT * FROM test_env_log", conn)
+    cont = pd.read_sql_query("SELECT * FROM internel_env_log", conn)
     dict = cont.to_dict('records')
     param = json.dumps(dict)
     print(dict[0])
@@ -63,7 +63,7 @@ def in_topic():
         df = pd.DataFrame.from_records([param2])
         df_r = df.set_index('date')
 
-        df_r.to_sql('test_env_log', conn, if_exists='append')
+        df_r.to_sql('internel_env_log', conn, if_exists='append')
 
 
     return "200"
