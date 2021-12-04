@@ -29,10 +29,13 @@ def dashboard():
 @app.route('/datalog')
 def datalog():
     c = conn.cursor()
-    cont = pd.read_sql_query("SELECT * FROM internel_env_log", conn)
-    dict = cont.to_dict('records')
-    param = json.dumps(dict)
-    print(dict[0])
+    try:
+        cont = pd.read_sql_query("SELECT * FROM internel_env_log", conn)
+        dict = cont.to_dict('records')
+        param = json.dumps(dict)
+        print(dict[0])
+    except :
+        dict = ""
 
 
 
