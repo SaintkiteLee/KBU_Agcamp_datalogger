@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    {% for key in dict[0] %}
+    <th>{{key}}</th>
+    {% endfor %}
+    {% for i in dict %}
+    <tr>
+        {% for key in i %}
+        <td>{{i[key]}}</td>
+
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+</body>
+</html>
