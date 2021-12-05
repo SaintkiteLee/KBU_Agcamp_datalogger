@@ -19,3 +19,4 @@
   + 전부 설치가 완료되면 flask run 을 입력하여 서버 실행 후 127.0.0.1:5000 으로 접근 가능
 
 # 메인 화면
+<img width="1429" alt="스크린샷 2021-12-05 오전 9 59 41" src="https://user-images.githubusercontent.com/5113673/144729335-7a1ea2b7-53a0-47a6-a4a9-3bc6aca1664e.png">
