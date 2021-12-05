@@ -79,5 +79,35 @@ def in_topic():
     return Response('200')
 
 
+@app.route('/api/in_topic_test', methods=['POST'])
+def in_topic_test():
+
+    x = dt.datetime.now()
+
+    if request.method == 'GET':
+        return "GET은 허용되지 않았습니다"
+
+    if request.method == 'POST':
+        response_d = request.get_json()
+        print(response_d)
+        param2 = {
+            'date': x.strftime("%Y.%m.%d"),
+            'time': x.strftime("%H:%M"),
+            'temp_a': response_d['temp'],
+            'temp_b': response_d['temp'],
+            'humidity_a': response_d['humidity'],
+            'humidity_b': response_d['humidity'],
+            'co2': response_d['co2']
+        }
+
+        # df = pd.DataFrame.from_records([param2])
+        # df_r = df.set_index('date')
+        # print(df_r)
+        # df_r.to_sql('internal_env_log', conn, if_exists='append')
+        print(param2)
+
+    return Response('200')
+
+
 if __name__ == '__main__':
     app.run()
