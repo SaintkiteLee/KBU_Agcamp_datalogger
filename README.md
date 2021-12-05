@@ -1,9 +1,9 @@
 # KBU_Agcamp_datalogger
 
-#아두이노를 활용한 데이터로거를 활용하기 위한 서버
+# 아두이노를 활용한 데이터로거를 활용하기 위한 서버
 ***
 
-##Requirement
+## Requirement
 + Python 3
 + Flask
 + SQLAlchemy
@@ -17,3 +17,5 @@
   + .venv\script\activate 라고 명령하면 가상환경으로 진입합니다
   + 이후 pip install -r requirement.txt 라고 명령하면 자동으로 환경 설치가 됩니다.
   + 전부 설치가 완료되면 flask run 을 입력하여 서버 실행 후 127.0.0.1:5000 으로 접근 가능
+
+# 메인 화면
