@@ -18,6 +18,13 @@ def index():  # put application's code here
     return redirect('/datalog')
 
 
+@app.route('/charts')
+def charts():  # put application's code here
+    return render_template("charts.html")
+
+
+
+
 @app.route('/base')
 def base():  # put application's code here
     return render_template("base.html")
